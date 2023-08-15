@@ -13,9 +13,9 @@ public class StreamAPI {
     @GetMapping(value="/data")
     public ResponseEntity<StreamingResponseBody> streamData() {
         StreamingResponseBody responseBody = response -> {
-            for (int i = 1; i <= 2; i++) {
+            for (int i = 1; i <= 100; i++) {
                 try {
-                    Thread.sleep(10);
+                    Thread.sleep(i * 100);
                     response.write(("Java microservices are a set of software applications written in the Java programming " +
                             "language (and typically leverage the vast ecosystem of Java tools and frameworks), designed for " +
                             "limited scope that work with each other to form a bigger solution. Each microservice, as the name " +
